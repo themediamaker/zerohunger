@@ -1,0 +1,22 @@
+export const physicalStatus = [
+    { "value": "Fit" },
+    { "value": "Healthy" },
+    { "value": "Overweight" },
+    { "value": "Underweight" },
+    { "value": "Athletic" },
+    { "value": "Obese" },
+    { "value": "Disabled" },
+    { "value": "Ill" },
+    { "value": "Recovering" },
+    { "value": "Injured" },
+    { "value": "Pregnant" },
+    { "value": "Physically Challenged" },
+    { "value": "Handicapped" },
+    { "value": "Average" },
+    { "value": "Slim" },
+    { "value": "Muscular" },
+    { "value": "Thin" },
+    { "value": "Robust" },
+    { "value": "Well-built" },
+    { "value": "Frail" }
+]

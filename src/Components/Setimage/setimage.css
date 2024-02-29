@@ -1,0 +1,111 @@
+
+.AddUser{
+    background-color:white;
+    height: 10vh;
+}
+.Adduserpic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Adduserpic .Adduserpicinnerdiv{
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.Adduserpic img{
+    width: 100%;
+    height: auto;
+}
+.AddUserDescription{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+@media only screen and (max-width:768px) {
+    .AddUserDescription .col-md-6{
+        padding: 0px;
+    }
+}
+#camera{
+    border-radius: 50%;
+    background-color: rgb(226, 222, 222);
+    /* padding: 5px; */
+    color: rgb(15, 15, 15);
+    cursor: pointer;
+    /* box-shadow: 0px 1px 2px 0px rgba(117,112,112,0.75); */
+    margin: 2px;
+    position: relative;
+    top: 200px;
+    left: 100px;
+    z-index: 200px;
+}
+
+#attachment{
+    /* border-radius:50%; */
+    /* background-color: gray; */
+    border-radius: 50%;
+    background-color: rgb(226, 222, 222);
+    /*padding: 5px; */
+    /* color: white; */
+    cursor: pointer;
+    /* box-shadow: 0px 2px 2px 0px rgba(117,112,112,0.75); */
+    /* margin: 5px; */
+    position: relative;
+    top: 200px;
+    left: 320px;
+    z-index: 200000px;
+} 
+#documentmodal{
+    border: 10px solid black;
+
+}
+#documentmodal .modal-header{
+    display: flex;
+    justify-content: center !important;
+    /* border: 30px solid black; */
+}
+.modal-content {
+    /* background-color: transparent !important; */
+    border:none !important;
+    }
+    /* #camerashow{
+height: 300px;
+    } */
+    #camerabody{
+        height: 480px;
+        /* text-align: center; */
+    }
+    /* #CameraAltIcon{
+        background-color: red;
+    } */
+ 
+
+    @media only screen and (max-width: 520px) and (min-width:370px){
+        #camerabody{
+            height: 430px!important;
+          
+        }
+        #webcam{
+            width:340px!important;
+            position: relative!important;
+            left: 0.010% !important;;
+            top: -35px;
+
+        }
+      
+        #CameraAlt{
+/* position: relative; */
+/* left: -100px; */
+/* background-color: red; */
+position: absolute !important;
+top:320px !important;
+left: 42% !important;
+        }
+
+    }
+   
