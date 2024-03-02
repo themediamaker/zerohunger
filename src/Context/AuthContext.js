@@ -13,23 +13,7 @@ export const AuthContextProvider = ({ children }) => {
   const [confirmationResult, setConfirmationResult] = useState(null)
   const [otpSend, SetOtpSend] = useState(false)
 
-  // $$$$$$$$$$$$$$$$ Phone Verification $$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-  // useEffect(()=>{
-  //   window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-  //     'size': 'normal',
-  //     'callback': (response) => {
-  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
-  //       // ...
-  //     },
-  //     'expired-callback': () => {
-  //       // Response expired. Ask user to solve reCAPTCHA again.
-  //       // ...
-  //     }
-  //   });
-  // },[auth])
-
-  // ****************** Phone Number Auth **********************************
   const handleSendOtp = async () => {
     try {
       const formattedPhoneNumber = `+${PhoneNumber.replace(/\D/g, '')}`;

@@ -78,19 +78,6 @@ try{
 
 
 
-        // try {
-        //     const confirmationResult = await signInWithPhoneNumber(auth, phoneNumberWithCode, recaptchaVerifier)
-        //     setConfirmationResult(confirmationResult)
-        //     const msg = {
-        //         message:'send otp succesfully',
-        //         command:1
-        //     }
-        //     return msg
-        //     // handleOpenDialog()
-        //     // console.log('OTP sent successfully:', confirmationResult);
-        // } catch (error) {
-        //     console.log('Error sending OTP:', error);
-        // }
     };
     const handleVerifyOTP = async (verificationCode) => {
         try {
@@ -121,40 +108,6 @@ try{
         }
     };
 
-
-    // alert('heel')
-    // const recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container');
-    // const phoneNumberWithCode = `+91${phoneNumber}`;
-    // try {
-    //     const confirmationResult = await signInWithPhoneNumber(auth, phoneNumberWithCode, recaptchaVerifier).then(() => {
-    //         handleOpenDialog()
-    //     })
-    //     setconfirmresult(confirmationResult)
-    //     // console.log('OTP sent successfully:', confirmationResult);
-    // } catch (error) {
-    //     console.log('Error sending OTP:', error);
-    // }
-
-
-    // const handleVerifyOTP = async (verificationCode) => {
-    //     if (verificationCode == '123456') {
-    //         setDialogOpen(false)
-    //         setotpsucess(true)
-    //         setShowButton(true)
-    //     }
-    //     else {
-    //         alert('enter valid otp')
-    //     }
-    // try {
-    //     const credential = firebase.auth.PhoneAuthProvider.credential(
-    //       confirmationResult.verificationId,
-    //       verificationCode
-    //     );
-    //     await signInWithCredential(auth,credential);
-    //     console.log('OTP verified successfully');
-    //   } catch (error) {
-    //     console.error('Error verifying OTP:', error);
-    //   }
 
 
 

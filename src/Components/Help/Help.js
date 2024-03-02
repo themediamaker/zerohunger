@@ -2,7 +2,8 @@
 "use client"
 
 import { useState } from 'react';
-
+import PartnershipForm from "../../Components/Help/PartnershipForm "
+import MatrimonyForm from "../../Components/Help/MatrimonyForm"
 const Help = () => {
     const [activeTab, setActiveTab] = useState('first');
 
@@ -31,7 +32,7 @@ const Help = () => {
             <div className="w-full mt-4 rounded">
                 {/* Tabs */}
                 <ul className="inline-flex w-full px-1 pt-2">
-                    <li className={`px-4 py-2 ${activeTab === 'first' ? '-mb-px font-semibold text-gray-800 border-b-2 border-blue-400 rounded-t cursor-pointer' : 'font-semibold text-gray-800 rounded-t opacity-50'}`} onClick={() => handleTabClick('first')}>COntact US</li>
+                    <li className={`px-4 py-2 ${activeTab === 'first' ? '-mb-px font-semibold text-gray-800 border-b-2 border-blue-400 rounded-t cursor-pointer' : 'font-semibold text-gray-800 rounded-t opacity-50'}`} onClick={() => handleTabClick('first')}>Contact US</li>
                     <li className={`px-4 py-2 ${activeTab === 'second' ? '-mb-px font-semibold text-gray-800 border-b-2 border-blue-400 rounded-t cursor-pointer' : 'font-semibold text-gray-800 rounded-t opacity-50'}`} onClick={() => handleTabClick('second')}>Business Enquiries</li>
                     <li className={`px-4 py-2 ${activeTab === 'third' ? '-mb-px font-semibold text-gray-800 border-b-2 border-blue-400 rounded-t cursor-pointer' : 'font-semibold text-gray-800 rounded-t opacity-50'}`} onClick={() => handleTabClick('third')}>Feedback</li>
                 </ul>
@@ -76,10 +77,10 @@ const Help = () => {
                     </div>
 
                     <div id="second" className={`p-4 ${activeTab === 'second' ? '' : 'hidden'}`}>
-
+            <PartnershipForm/>
                     </div>
                     <div id="third" className={`p-4 ${activeTab === 'third' ? '' : 'hidden'}`}>
-              
+              <MatrimonyForm/>
                     </div>
 
                 </div>
