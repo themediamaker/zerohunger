@@ -1,18 +1,27 @@
 "use client";
 
 import Header from "@/src/Layout/Comman/Header";
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Footer from "@/src/Layout/Comman/Footer";
 import { useForm } from "react-hook-form";
-
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import { FaCheck } from 'react-icons/fa'; 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [phone, setPhone] = useState("");
   const [phoneCountryCode, setPhoneCountryCode] = useState("");
-
+  const [captchaInput, setCaptchaInput] = useState('');
+    const [captchaVerified, setCaptchaVerified] = useState(false);
   // Handle phone number change
+
+
+  useEffect(() => {
+    loadCaptchaEnginge(6); // Load CAPTCHA on component mount
+}, []);
+
+
   const handlePhoneChange = (value, country) => {
     setPhone(value);
     setPhoneCountryCode(country.dialCode); // Extract the country code
@@ -32,6 +41,24 @@ const Contact = () => {
     });
     alert("Form Submitted!");
   };
+
+
+  const handleCaptchaInputChange = (event) => {
+    setCaptchaInput(event.target.value);
+};
+
+const validateCaptchaInput = () => {
+  if (validateCaptcha(captchaInput)) {
+      setCaptchaVerified(true);
+      alert("CAPTCHA verified successfully!");
+  } else {
+      setCaptchaVerified(false);
+      alert("CAPTCHA does not match. Please try again.");
+      loadCaptchaEnginge(6); // Reload CAPTCHA on failure
+  }
+};
+
+
 
   return (
     <>
@@ -145,6 +172,31 @@ const Contact = () => {
               </div>
             </div>
           </div>
+                                    {/* CAPTCHA */}
+                                    <div className="mt-6 relative flex items-center">
+    <LoadCanvasTemplate />
+    <div className="relative w-full max-w-xs">
+        <input
+            type="text"
+            value={captchaInput}
+            onChange={handleCaptchaInputChange}
+            placeholder="Enter Captcha Value"
+            className="border border-gray-300 rounded-md px-4 py-2 w-full pr-24" // Adjust padding-right to make space for the button and icon
+        />
+        <div className="flex items-center space-x-2 absolute right-0 top-0 h-full">
+            <button
+                type="button"
+                onClick={validateCaptchaInput}
+                className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
+            >
+                Verify Captcha
+            </button>
+            {captchaVerified && (
+                <FaCheck className="text-green-500 text-xl" />
+            )}
+        </div>
+    </div>
+</div>
 
           {/* Submit Button */}
           <div className="mt-10">
