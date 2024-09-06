@@ -10,10 +10,26 @@ import { useForm } from "react-hook-form";
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [phone, setPhone] = useState("");
+  const [phoneCountryCode, setPhoneCountryCode] = useState("");
+
+  // Handle phone number change
+  const handlePhoneChange = (value, country) => {
+    setPhone(value);
+    setPhoneCountryCode(country.dialCode); // Extract the country code
+  };
 
   // Submit handler
   const onSubmit = (data) => {
-    console.log(data);
+    // Separate phone number into country code and number
+    const phoneNumber = phone.startsWith(phoneCountryCode)
+      ? phone.substring(phoneCountryCode.length)
+      : phone;
+
+    console.log({
+      ...data,
+      phoneCountryCode,
+      phoneNumber
+    });
     alert("Form Submitted!");
   };
 
@@ -103,13 +119,12 @@ const Contact = () => {
                 Phone number
               </label>
               <div className="mt-2.5">
-              <PhoneInput
-  country={"us"}
-  value={phone}
-  onChange={setPhone}
-  inputClass="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
-/>
-
+                <PhoneInput
+                  country={"us"}
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  inputClass="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
+                />
                 {phone === "" && <span className="text-red-500 text-sm">Phone number is required</span>}
               </div>
             </div>
@@ -143,7 +158,6 @@ const Contact = () => {
         </form>
       </div>
 
-      
       <Footer />
     </>
   );

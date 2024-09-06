@@ -1,18 +1,74 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti'; // Import confetti library
 import Header from '../Layout/Comman/Header';
 import Footer from '../Layout/Comman/Footer';
 import { useForm } from 'react-hook-form';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import { FaCheck } from 'react-icons/fa'; // Import checkmark icon from react-icons
 
 const Donate = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [submitted, setSubmitted] = useState(false);
+    const [captchaInput, setCaptchaInput] = useState('');
+    const [captchaVerified, setCaptchaVerified] = useState(false);
+
+    useEffect(() => {
+        loadCaptchaEnginge(6); // Load CAPTCHA on component mount
+    }, []);
 
     const onSubmit = (data) => {
-        // Handle form submission
-        console.log(data);
+        if (captchaVerified) {
+            console.log(data);
+            setSubmitted(true);
+            triggerConfetti();
+        } else {
+            alert("Please complete the CAPTCHA verification.");
+        }
     };
+
+    const triggerConfetti = () => {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#ff0000', '#00ff00', '#0000ff'],
+        });
+    };
+
+    const handleCaptchaInputChange = (event) => {
+        setCaptchaInput(event.target.value);
+    };
+
+    const validateCaptchaInput = () => {
+        if (validateCaptcha(captchaInput)) {
+            setCaptchaVerified(true);
+            alert("CAPTCHA verified successfully!");
+        } else {
+            setCaptchaVerified(false);
+            alert("CAPTCHA does not match. Please try again.");
+            loadCaptchaEnginge(6); // Reload CAPTCHA on failure
+        }
+    };
+
+    if (submitted) {
+        return (
+            <>
+                <Header />
+                <section className="flex items-center justify-center h-screen bg-gray-100">
+                    <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-lg mx-auto">
+                        <h2 className="text-2xl font-bold mb-4">Thank You for Your submission!</h2>
+                        <p className="text-lg mb-6">We Have Received Your Donation Request Successfully. Our Team Will Get in Touch Shortly!</p>
+                        <button className="text-red-500 hover:underline" onClick={triggerConfetti}>
+                            Celebrate Again!
+                        </button>
+                    </div>
+                </section>
+                <Footer />
+            </>
+        );
+    }
 
     return (
         <>
@@ -26,183 +82,107 @@ const Donate = () => {
                             <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
                                 <h3 className="text-xl font-semibold mb-4">Enter Your Donation</h3>
                                 <form onSubmit={handleSubmit(onSubmit)}>
-                                    <div className="flex items-center">
-                                        <input
-                                            type="number"
-                                            className="form-input rounded-l-md border-gray-300 shadow-sm flex-1"
-                                            placeholder="Amount"
-                                            {...register('amount', { required: true })}
-                                        />
-                                        <span className="text-lg font-medium px-3">$</span>
-                                        <span className="text-lg font-medium">.00</span>
-                                    </div>
-                                    {errors.amount && <p className="text-red-500">Amount is required</p>}
-                                </form>
-                            </div>
-                            {/* Personal Info */}
-                            <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
-                                <h3 className="text-xl font-semibold mb-4">Personal Info</h3>
-                                <form onSubmit={handleSubmit(onSubmit)}>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <input
                                                 type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="First Name"
-                                                {...register('firstName', { required: true })}
+                                                className="form-input rounded-md border-gray-300 shadow-sm w-full"
+                                                placeholder="Full Name"
+                                                {...register('name', {
+                                                    required: 'Name is required',
+                                                    minLength: {
+                                                        value: 3,
+                                                        message: 'Name must be at least 3 characters long',
+                                                    }
+                                                })}
                                             />
-                                            {errors.firstName && <p className="text-red-500">First Name is required</p>}
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="Last Name"
-                                                {...register('lastName', { required: true })}
-                                            />
-                                            {errors.lastName && <p className="text-red-500">Last Name is required</p>}
+                                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                                         </div>
                                         <div>
                                             <input
                                                 type="email"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
+                                                className="form-input rounded-md border-gray-300 shadow-sm w-full"
                                                 placeholder="Email Address"
-                                                {...register('email', { required: true })}
+                                                {...register('email', {
+                                                    required: 'Email is required',
+                                                    pattern: {
+                                                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                                        message: 'Invalid email address',
+                                                    }
+                                                })}
                                             />
-                                            {errors.email && <p className="text-red-500">Email Address is required</p>}
+                                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
                                         </div>
                                         <div>
                                             <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
+                                                type="tel"
+                                                className="form-input rounded-md border-gray-300 shadow-sm w-full"
                                                 placeholder="Phone Number"
-                                                {...register('phoneNumber', { required: true })}
+                                                {...register('phoneNumber', {
+                                                    required: 'Phone Number is required',
+                                                    pattern: {
+                                                        value: /^[0-9]{10}$/,
+                                                        message: 'Phone Number must be exactly 10 digits',
+                                                    }
+                                                })}
                                             />
-                                            {errors.phoneNumber && <p className="text-red-500">Phone Number is required</p>}
+                                            {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>}
                                         </div>
                                         <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="Address"
-                                                {...register('address', { required: true })}
-                                            />
-                                            {errors.address && <p className="text-red-500">Address is required</p>}
-                                        </div>
-                                        <div>
-                                            <select className="form-select rounded-md border-gray-300 shadow-sm" {...register('country', { required: true })}>
-                                                <option value="">Select Country</option>
-                                                <option value="usa">USA</option>
-                                                <option value="uk">UK</option>
-                                                <option value="pakistan">Pakistan</option>
-                                                <option value="bangladesh">Bangladesh</option>
-                                                <option value="india">India</option>
-                                            </select>
-                                            {errors.country && <p className="text-red-500">Country is required</p>}
-                                        </div>
-                                        <div className="col-span-2">
-                                            <textarea
-                                                className="form-textarea rounded-md border-gray-300 shadow-sm w-full"
-                                                placeholder="Leave a Comment"
-                                                {...register('comment')}
-                                            />
+                                            <div className="flex items-center">
+                                                <input
+                                                    type="number"
+                                                    className="form-input rounded-md border-gray-300 shadow-sm flex-1"
+                                                    placeholder="Amount"
+                                                    {...register('amount', { required: 'Amount is required' })}
+                                                />
+                                            </div>
+                                            {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p>}
                                         </div>
                                     </div>
-                                    <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                                        Submit Donation
-                                    </button>
-                                </form>
-                            </div>
-                            {/* Payment Info */}
-                            <div className="bg-white shadow-lg rounded-lg p-6">
-                                <h3 className="text-xl font-semibold mb-4">Payment Info</h3>
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="Card Number"
-                                                {...register('cardNumber', { required: true })}
-                                            />
-                                            {errors.cardNumber && <p className="text-red-500">Card Number is required</p>}
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="MM/YY"
-                                                {...register('expiryDate', { required: true })}
-                                            />
-                                            {errors.expiryDate && <p className="text-red-500">Expiry Date is required</p>}
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="Card Code (CVC)"
-                                                {...register('cardCode', { required: true })}
-                                            />
-                                            {errors.cardCode && <p className="text-red-500">Card Code is required</p>}
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="Billing Address"
-                                                {...register('billingAddress', { required: true })}
-                                            />
-                                            {errors.billingAddress && <p className="text-red-500">Billing Address is required</p>}
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="text"
-                                                className="form-input rounded-md border-gray-300 shadow-sm"
-                                                placeholder="City"
-                                                {...register('city', { required: true })}
-                                            />
-                                            {errors.city && <p className="text-red-500">City is required</p>}
-                                        </div>
-                                        <div>
-                                            <select className="form-select rounded-md border-gray-300 shadow-sm" {...register('paymentCountry', { required: true })}>
-                                                <option value="">Select Country</option>
-                                                <option value="usa">USA</option>
-                                                <option value="uk">UK</option>
-                                                <option value="pakistan">Pakistan</option>
-                                                <option value="bangladesh">Bangladesh</option>
-                                                <option value="india">India</option>
-                                            </select>
-                                            {errors.paymentCountry && <p className="text-red-500">Country is required</p>}
-                                        </div>
-                                        <div className="col-span-2">
-                                            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">
-                                                Donate Now
-                                            </button>
-                                        </div>
+
+                                    {/* CAPTCHA */}
+                                    <div className="mt-6 relative flex items-center">
+    <LoadCanvasTemplate />
+    <div className="relative w-full max-w-xs">
+        <input
+            type="text"
+            value={captchaInput}
+            onChange={handleCaptchaInputChange}
+            placeholder="Enter Captcha Value"
+            className="border border-gray-300 rounded-md px-4 py-2 w-full pr-24" // Adjust padding-right to make space for the button and icon
+        />
+        <div className="flex items-center space-x-2 absolute right-0 top-0 h-full">
+            <button
+                type="button"
+                onClick={validateCaptchaInput}
+                className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
+            >
+                Verify Captcha
+            </button>
+            {captchaVerified && (
+                <FaCheck className="text-green-500 text-xl" />
+            )}
+        </div>
+    </div>
+</div>
+
+
+
+
+                                
+                                    {/* Submit Button with Checkmark */}
+                                    <div className="flex items-center mt-6">
+                                        <button
+                                            type="submit"
+                                            className="rounded-lg bg-red-500 py-2 px-4 font-bold text-white shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+                                            disabled={!captchaVerified} // Disable submit button if CAPTCHA is not verified
+                                        >
+                                            Submit Donation
+                                        </button>
+                                      
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                        {/* Sidebar */}
-                        <div className="lg:w-1/3 w-full lg:pl-4">
-                            <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
-                                <div className="mb-4">
-                                    <img src="/images/school.jpg" alt="Cause" className="w-full rounded-lg" />
-                                </div>
-                                <h3 className="text-lg font-semibold mb-2">
-                                    <Link href="/causes-detail">
-                                        <span className="text-blue-600 hover:underline">They Want to Study</span>
-                                    </Link>
-                                </h3>
-                                <ul className="list-disc list-inside mb-4">
-                                    <li>
-                                        <i className="icon-target"></i> Goal: <span>$30,000</span>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-line-chart"></i> Raised: <span>$25,270</span>
-                                    </li>
-                                </ul>
-                                <p className="text-gray-600">Raised by 25 donors</p>
                             </div>
                         </div>
                     </div>

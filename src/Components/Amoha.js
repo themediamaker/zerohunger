@@ -9,7 +9,7 @@ const Amoha = () => {
       <Header />
       
       {/* Main content section */}
-      <div className="bg-gray-100 py-12">
+      <div className="bg-gray-100 py-12 mt-12">
         <div className="container mx-auto p-6 max-w-6xl">
           
           {/* Page Heading */}
