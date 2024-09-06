@@ -1,12 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { FaBars, FaTimes } from 'react-icons/fa'; // FontAwesome icons for toggle button
 
 const Header = () => {
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const data = () => {
+  const handleDonateClick = () => {
     router.push('/donate');
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -15,6 +21,9 @@ const Header = () => {
         <img src="/images/Add_a_heading.png" alt="section-icon" />
       </h1>
 
+    
+
+      {/* Desktop Navigation */}
       <nav className="hidden md:block font-semibold text-lg">
         <ul className="flex items-center space-x-4">
           <li className="relative group p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
@@ -24,7 +33,7 @@ const Header = () => {
           </li>
           <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
             <Link href="/about/over-mission" legacyBehavior>
-              <span>About US</span>
+              <span>About Us</span>
             </Link>
           </li>
           <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
@@ -40,30 +49,47 @@ const Header = () => {
         </ul>
       </nav>
 
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <nav className="absolute top-14 left-0 w-full bg-white shadow-lg md:hidden">
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+              <Link href="/" onClick={toggleMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+              <Link href="/about/over-mission" onClick={toggleMenu}>
+                About Us
+              </Link>
+            </li>
+            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+              <Link href="/about/over-mission" onClick={toggleMenu}>
+                Our Mission
+              </Link>
+            </li>
+            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+              <Link href="/contact" onClick={toggleMenu}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
+
       <button
         className="middle none center mr-2 md:mr-4 rounded-lg bg-red-500 py-2 px-4 md:py-3 md:px-6 font-sans text-xs md:text-sm font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        onClick={data}
+        onClick={handleDonateClick}
       >
         Donate Now
       </button>
 
-      {/* Mobile menu toggle */}
-      <div className="block md:hidden">
-        <button className="text-gray-500 hover:text-gray-700 focus:outline-none">
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+
+
+        {/* Mobile Toggle Button */}
+        <div className="md:hidden">
+        <button onClick={toggleMenu} className="text-2xl focus:outline-none">
+          {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
     </header>
