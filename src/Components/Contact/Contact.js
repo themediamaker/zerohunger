@@ -14,22 +14,22 @@ const Contact = () => {
   const [phoneCountryCode, setPhoneCountryCode] = useState("");
   const [captchaInput, setCaptchaInput] = useState('');
     const [captchaVerified, setCaptchaVerified] = useState(false);
-  // Handle phone number change
+
 
 
   useEffect(() => {
-    loadCaptchaEnginge(6); // Load CAPTCHA on component mount
+    loadCaptchaEnginge(6); 
 }, []);
 
 
   const handlePhoneChange = (value, country) => {
     setPhone(value);
-    setPhoneCountryCode(country.dialCode); // Extract the country code
+    setPhoneCountryCode(country.dialCode); 
   };
 
-  // Submit handler
+
   const onSubmit = (data) => {
-    // Separate phone number into country code and number
+  
     const phoneNumber = phone.startsWith(phoneCountryCode)
       ? phone.substring(phoneCountryCode.length)
       : phone;
@@ -54,7 +54,7 @@ const validateCaptchaInput = () => {
   } else {
       setCaptchaVerified(false);
       alert("CAPTCHA does not match. Please try again.");
-      loadCaptchaEnginge(6); // Reload CAPTCHA on failure
+      loadCaptchaEnginge(6);
   }
 };
 
