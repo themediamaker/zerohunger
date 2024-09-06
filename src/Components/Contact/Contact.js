@@ -86,10 +86,10 @@ const validateCaptchaInput = () => {
           />
         </div>
 
-        {/* Form Section */}
+
         <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-16 max-w-xl sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            {/* First Name */}
+      
             <div>
               <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-black">
                 First name
@@ -105,7 +105,7 @@ const validateCaptchaInput = () => {
                 {errors.firstName && <span className="text-red-500 text-sm">{errors.firstName.message}</span>}
               </div>
             </div>
-            {/* Last Name */}
+
             <div>
               <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-black">
                 Last name
@@ -121,7 +121,7 @@ const validateCaptchaInput = () => {
                 {errors.lastName && <span className="text-red-500 text-sm">{errors.lastName.message}</span>}
               </div>
             </div>
-            {/* Email */}
+
             <div className="sm:col-span-2">
               <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
                 Email
