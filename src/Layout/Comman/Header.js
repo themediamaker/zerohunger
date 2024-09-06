@@ -23,7 +23,6 @@ const Header = () => {
 
     
 
-      {/* Desktop Navigation */}
       <nav className="hidden md:block font-semibold text-lg">
         <ul className="flex items-center space-x-4">
           <li className="relative group p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
@@ -49,7 +48,6 @@ const Header = () => {
         </ul>
       </nav>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <nav className="absolute top-14 left-0 w-full bg-white shadow-lg md:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4">
@@ -86,7 +84,7 @@ const Header = () => {
 
 
 
-        {/* Mobile Toggle Button */}
+  
         <div className="md:hidden">
         <button onClick={toggleMenu} className="text-2xl focus:outline-none">
           {isOpen ? <FaTimes /> : <FaBars />}
