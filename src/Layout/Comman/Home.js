@@ -4,11 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ServiceArea from "../../Components/ServiceArea";
-import ProgramsSection from "../../Components/ProgramsSection";
-import ProcessOfNourishment from "../../Components/ProcessOfNourishment";
+import ProgramsSection from "../../Components/ProgramsSection ";
+import ProcessOfNourishment from "../../Components/ProcessOfNourishment ";
 import Servicetext from "../../Components/Servicetext";
 import ServiceHistory from "../../Components/ServiceHistory";
-import ThreeCardsSection from "../../Components/ThreeCardsSection";
+import ThreeCardsSection from "../../Components/ThreeCardsSection ";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,7 +37,7 @@ const Home = () => {
     return (
         <>
             {/* Slider Section */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden w-full">
                 <Slider {...settings} className="w-full h-full">
                     <div className="relative w-full h-full">
                         <img className="w-full h-auto max-w-full object-cover" src="/images/slider3.webp" alt="Slide 1" />
@@ -52,32 +52,32 @@ const Home = () => {
             </div>
 
             {/* Process of Nourishment Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <ProcessOfNourishment />
             </div>
 
             {/* Service Area Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <ServiceArea />
             </div>
 
             {/* Service History Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <ServiceHistory />
             </div>
 
             {/* Service Text Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <Servicetext />
             </div>
 
             {/* Three Cards Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <ThreeCardsSection />
             </div>
 
             {/* Programs Section */}
-            <div className="px-4 md:px-8 lg:px-16">
+            <div className="w-full">
                 <ProgramsSection />
             </div>
         </>

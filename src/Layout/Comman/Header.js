@@ -16,9 +16,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between px-4 md:px-8 py-2 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between px-2 md:px-4 py-2 z-50 w-full">
+      {/* Logo Section */}
       <h1 className="w-6/12 md:w-2/12">
-        <img src="/images/Add_a_heading.png" alt="section-icon" />
+        <img src="/images/Add_a_heading.png" alt="section-icon" className="w-full h-auto" />
       </h1>
 
       {/* Desktop Navigation */}

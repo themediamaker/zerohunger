@@ -4,7 +4,7 @@ import React from "react";
 
 const ServiceArea = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between bg-white p-6 sm:p-10 lg:p-16">
+    <div className="flex flex-col lg:flex-row items-center justify-between bg-white px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
       {/* Text Section */}
       <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">

@@ -2,13 +2,14 @@ import React from 'react';
 
 const ThreeCardsSection = () => {
   return (
-    <div className="p-6 bg-gray-100">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">
+    <div className="px-4 py-8 sm:px-6 lg:px-8 bg-gray-100">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-center">
         The Power of Collective Effort: Uniting a Billion People
       </h2>
-      <div className="flex flex-col sm:flex-row sm:space-x-4">
+      
+      <div className="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0 lg:space-x-6">
         {/* Card 1 */}
-        <div className="bg-white shadow-md rounded-lg p-6 mb-6 sm:mb-0 flex-1">
+        <div className="bg-white shadow-md rounded-lg p-6 flex-1">
           <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
             Provide Meals
           </h3>
@@ -16,8 +17,9 @@ const ThreeCardsSection = () => {
             You can contribute directly by donating meals. Whether you’re an individual, a business, or an organization, your meal donations will go a long way in providing essential nutrition to those in need.
           </p>
         </div>
+        
         {/* Card 2 */}
-        <div className="bg-white shadow-md rounded-lg p-6 mb-6 sm:mb-0 flex-1">
+        <div className="bg-white shadow-md rounded-lg p-6 flex-1">
           <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
             Gift in Cash or Kind
           </h3>
@@ -25,8 +27,9 @@ const ThreeCardsSection = () => {
             Financial contributions are crucial for supporting the logistics and procurement of food supplies. Your monetary donations help us purchase, store, and distribute food effectively. Additionally, donating food items, non-perishable goods, or other resources can directly support our meal distribution efforts.
           </p>
         </div>
+
         {/* Card 3 */}
-        <div className="bg-white shadow-md rounded-lg p-6 mb-6 sm:mb-0 flex-1">
+        <div className="bg-white shadow-md rounded-lg p-6 flex-1">
           <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
             Help with Distribution
           </h3>
