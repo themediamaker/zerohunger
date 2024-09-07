@@ -31,12 +31,12 @@ const Header = () => {
             </Link>
           </li>
           <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
-            <Link href="/about/over-mission" legacyBehavior>
+            <Link href="/about" legacyBehavior>
               <span>About Us</span>
             </Link>
           </li>
           <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
-            <Link href="/about/over-mission" legacyBehavior>
+            <Link href="/our-mission" legacyBehavior>
               <span>Our Mission</span>
             </Link>
           </li>
@@ -58,12 +58,12 @@ const Header = () => {
               </Link>
             </li>
             <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
-              <Link href="/about/over-mission" onClick={toggleMenu}>
+              <Link href="/about" onClick={toggleMenu}>
                 About Us
               </Link>
             </li>
             <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
-              <Link href="/about/over-mission" onClick={toggleMenu}>
+              <Link href="/our-mission" onClick={toggleMenu}>
                 Our Mission
               </Link>
             </li>

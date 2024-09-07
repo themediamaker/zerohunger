@@ -9,20 +9,19 @@ const OverMission = () => {
   return (
     <>
       <Header />
-      <div className="bg-white text-gray-800 p-6 sm:p-10 lg:p-16 mt-10">
-        <div className="w-full h-screen">
-    
-  <img
-    src="/images/about.webp" // Replace with your image path
-    alt="Mission Zero Hunger"
-   className="w-full h-full object-cover"
-  />
-</div>
+     
+      <div className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] flex items-start justify-center bg-gray-100 mt-16 overflow-hidden">
+        <img
+          src="/images/about.webp" // Replace with your image path
+          alt="Mission Zero Hunger"
+          className="w-full h-full object-cover"
+        />
+      </div>
     
 
 <MidDayMealsSection />
 
-        </div>
+
 
 
 
