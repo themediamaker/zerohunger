@@ -3,7 +3,7 @@
 import React from 'react';
 import Header from '../Layout/Comman/Header';
 import Footer from '../Layout/Comman/Footer';
-
+import ProgramsSection from "../Components/ProgramsSection "
 const Mission = () => {
   return (
     <>
@@ -23,6 +23,9 @@ const Mission = () => {
           Our target of providing 3 billion meals each day highlights the magnitude of our commitment to tackling hunger. The current global population is approximately 8 billion people, and a significant portion of this population faces food insecurity. By focusing on delivering 3 billion meals a day, Mission Zero Hunger aims to ensure that a substantial percentage of this need is met, providing immediate relief and laying the foundation for long-term food security.
         </p>
       </div>
+      <div className="w-full">
+                <ProgramsSection />
+            </div>
       <Footer />
     </>
   );
