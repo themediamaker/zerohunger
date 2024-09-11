@@ -18,13 +18,15 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between px-2 md:px-4 py-1 z-50 w-full">
       {/* Logo Section */}
-      <h1 className="w-4/12 sm:w-3/12 md:w-2/12 ml-2"> {/* Added margin-left for the logo */}
-        <img 
-          src="/images/Add_a_heading.png" 
-          alt="section-icon" 
-          className="w-full h-auto max-w-[120px] sm:max-w-[100px] md:max-w-[80px]" 
-        />
-      </h1>
+      <h1 className="w-4/12 sm:w-3/12 md:w-2/12 ml-2">
+  <img 
+    src="/images/Add_a_heading.png" 
+    alt="section-icon" 
+    className="w-full h-auto max-w-[100px] sm:max-w-[80px] md:max-w-[70px] lg:max-w-[60px]" // Desktop and mobile ke liye different sizes
+  />
+</h1>
+
+
 
       {/* Desktop Navigation */}
       <nav className="hidden md:block font-semibold text-lg">
