@@ -7,7 +7,7 @@ const ServiceArea = () => {
     <div className="flex flex-col lg:flex-row items-center justify-between bg-white px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
       {/* Text Section */}
       <div className="w-full lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
           The Power of Collective Effort: Uniting a Billion People
         </h1>
         <p className="text-lg sm:text-xl mb-4">

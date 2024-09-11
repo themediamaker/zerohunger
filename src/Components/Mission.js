@@ -16,7 +16,7 @@ const Mission = () => {
         />
       </div>
       <div className="max-w-screen-lg mx-auto px-4 py-6">
-        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-orange-500 pb-2">
+        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-[#0c4c8a] pb-2">
           Our Vision: 3 Billion Meals a Day
         </h2>
         <p className="text-lg leading-relaxed">

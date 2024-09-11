@@ -219,7 +219,7 @@ const Contact = () => {
             <button
                 type="button"
                 onClick={validateCaptchaInput}
-                className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
+                className="bg-[#0c4c8a] text-white px-4 py-2 rounded-md flex items-center"
             >
                 Verify Captcha
             </button>
@@ -238,7 +238,7 @@ const Contact = () => {
           <div className="mt-8">
           <button
               type="submit"
-              className="block w-full rounded-md bg-cyan-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="block w-full rounded-md bg-[#0c4c8a] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Submit
             </button>

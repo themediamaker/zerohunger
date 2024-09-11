@@ -141,7 +141,7 @@ class Footer extends Component {
         <div
           onClick={this.scrollTop}
           id="back-to-top"
-          className={`fixed bottom-4 right-4 bg-red-500 text-white p-2 rounded-full cursor-pointer transition-opacity duration-300 ${
+          className={`fixed bottom-4 right-4 bg-[#0c4c8a] text-white p-2 rounded-full cursor-pointer transition-opacity duration-300 ${
             this.state.scrollBtn ? 'opacity-100' : 'opacity-0'
           }`}
         >

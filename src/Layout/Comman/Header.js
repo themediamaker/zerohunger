@@ -39,22 +39,22 @@ const Header = () => {
       {/* Desktop Navigation */}
       <nav className="hidden md:block font-semibold text-lg">
         <ul className="flex items-center space-x-4">
-          <li className="relative group p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <li className="relative group p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
             <Link href="/" legacyBehavior>
               <span>Home</span>
             </Link>
           </li>
-          <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
             <Link href="/about" legacyBehavior>
               <span>About Us</span>
             </Link>
           </li>
-          <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
             <Link href="/our-mission" legacyBehavior>
               <span>Our Mission</span>
             </Link>
           </li>
-          <li className="p-2 md:p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+          <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
             <Link href="/contact" legacyBehavior>
               <span>Contact</span>
             </Link>
@@ -66,22 +66,22 @@ const Header = () => {
       {isOpen && (
         <nav className="absolute top-14 left-0 w-full bg-white shadow-lg md:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4">
-            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+            <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
               <Link href="/" onClick={toggleMenu}>
                 Home
               </Link>
             </li>
-            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+            <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
               <Link href="/about" onClick={toggleMenu}>
                 About Us
               </Link>
             </li>
-            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+            <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
               <Link href="/our-mission" onClick={toggleMenu}>
                 Our Mission
               </Link>
             </li>
-            <li className="p-2 border-b-2 border-green-500 hover:text-green-500 duration-200 cursor-pointer">
+            <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
               <Link href="/contact" onClick={toggleMenu}>
                 Contact
               </Link>
@@ -92,11 +92,12 @@ const Header = () => {
 
       {/* Donate Button */}
       <button
-        className="middle none center mr-2 md:mr-4 rounded-lg bg-red-500 py-2 px-4 md:py-3 md:px-6 font-sans text-xs md:text-sm font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        onClick={handleDonateClick}
-      >
-        Donate Now
-      </button>
+  className="middle none center mr-2 md:mr-4 rounded-lg bg-[#0c4c8a] py-2 px-4 md:py-3 md:px-6 font-sans text-xs md:text-sm font-bold uppercase text-white shadow-md shadow-[#0c4c8a]/20 transition-all hover:shadow-lg hover:shadow-[#0c4c8a]/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  onClick={handleDonateClick}
+>
+  Donate Now
+</button>
+
 
       {/* Toggle Button for Mobile */}
       <div className="md:hidden">

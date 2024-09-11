@@ -10,7 +10,7 @@ const ThreeCardsSection = () => {
       <div className="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0 lg:space-x-6">
         {/* Card 1 */}
         <div className="bg-white shadow-md rounded-lg p-6 flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
             Provide Meals
           </h3>
           <p className="text-gray-700">
@@ -20,7 +20,7 @@ const ThreeCardsSection = () => {
         
         {/* Card 2 */}
         <div className="bg-white shadow-md rounded-lg p-6 flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
             Gift in Cash or Kind
           </h3>
           <p className="text-gray-700">
@@ -30,7 +30,7 @@ const ThreeCardsSection = () => {
 
         {/* Card 3 */}
         <div className="bg-white shadow-md rounded-lg p-6 flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
             Help with Distribution
           </h3>
           <p className="text-gray-700">

@@ -15,7 +15,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 // Custom Arrow Component for Slider
 const Arrow = ({ direction, onClick }) => (
     <div
-        className={`absolute top-1/2 ${direction === 'left' ? 'left-2 md:left-4' : 'right-2 md:right-4'} transform -translate-y-1/2 bg-red-500 text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer z-10 shadow-lg transition-transform duration-300 ease-in-out hover:bg-gray-700 hover:scale-110`}
+        className={`absolute top-1/2 ${direction === 'left' ? 'left-2 md:left-4' : 'right-2 md:right-4'} transform -translate-y-1/2 bg-[#0c4c8a] text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer z-10 shadow-lg transition-transform duration-300 ease-in-out hover:bg-gray-700 hover:scale-110`}
         onClick={onClick}
     >
         <FontAwesomeIcon icon={direction === 'left' ? faChevronLeft : faChevronRight} className="text-lg md:text-xl" />

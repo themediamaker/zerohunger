@@ -7,7 +7,7 @@ const Servicetext = () => {
     <div className="flex flex-col md:flex-row items-center bg-white px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
       {/* Text Section */}
       <div className="w-full md:w-1/2 md:pr-6 mb-6 md:mb-0">
-        <h1 className="text-xl md:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+        <h1 className="text-xl md:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
           Uniting a Billion People for 3 Billion Meals a Day
         </h1>
         <p className="text-base md:text-lg mb-4">

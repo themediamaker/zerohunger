@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ProgramsSection = () => {
   return (
-    <div className="bg-orange-500 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#0c4c8a] text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Our Programs */}
         <div className="mb-8">

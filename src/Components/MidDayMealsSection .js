@@ -4,7 +4,7 @@ const MidDayMealsSection  = () => {
   return (
     <div className="bg-gradient-to-r from-orange-100 to-orange-200 text-gray-800 p-8 sm:p-12 lg:p-16 ">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-8 border-b-4 border-orange-600 pb-4">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-8 border-b-4 border-[#0c4c8a] pb-4">
           Mission Zero Hunger: Uniting a Billion People for 3 Billion Meals a Day
         </h1>
 
@@ -14,7 +14,7 @@ const MidDayMealsSection  = () => {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b-2 border-orange-500 pb-2">
+            <h2 className="text-2xl font-semibold mb-4 border-b-2 border-[#0c4c8a] pb-2">
               Our Vision: 3 Billion Meals a Day
             </h2>
             <p className="text-lg leading-relaxed">
@@ -23,7 +23,7 @@ const MidDayMealsSection  = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b-2 border-orange-500 pb-2">
+            <h2 className="text-2xl font-semibold mb-4 border-b-2 border-[#0c4c8a] pb-2">
               The Power of Collective Effort: Uniting a Billion People
             </h2>
             <p className="text-lg leading-relaxed">
@@ -50,7 +50,7 @@ const MidDayMealsSection  = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mt-10 mb-4 border-b-2 border-orange-500 pb-2">
+            <h2 className="text-2xl font-semibold mt-10 mb-4 border-b-2 border-[#0c4c8a] pb-2">
               Join Us in Making History
             </h2>
             <p className="text-lg leading-relaxed">

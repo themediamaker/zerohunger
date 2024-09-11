@@ -16,7 +16,7 @@ const ServiceHistory = () => {
 
       {/* Text Section */}
       <div className="w-full md:w-1/2 md:pl-6">
-        <h1 className="text-xl md:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-orange-500 after:mt-2">
+        <h1 className="text-xl md:text-2xl font-bold mb-4 relative after:block after:w-16 after:h-1 after:bg-[#0c4c8a] after:mt-2">
           Join Us in Making History
         </h1>
         <p className="text-base md:text-lg mb-4">

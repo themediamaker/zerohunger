@@ -175,7 +175,7 @@ const Donate = () => {
             <button
                 type="button"
                 onClick={validateCaptchaInput}
-                className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
+                className="bg-[#0c4c8a] text-white px-4 py-2 rounded-md flex items-center"
             >
                 Verify Captcha
             </button>
@@ -194,7 +194,7 @@ const Donate = () => {
                                     <div className="flex items-center mt-6">
                                         <button
                                             type="submit"
-                                            className="rounded-lg bg-red-500 py-2 px-4 font-bold text-white shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+                                            className="rounded-lg bg-[#0c4c8a] py-2 px-4 font-bold text-white shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
                           
                                         >
                                             Submit Donation
