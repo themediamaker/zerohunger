@@ -22,9 +22,17 @@ const Header = () => {
   <img 
     src="/images/Add_a_heading.png" 
     alt="section-icon" 
-    className="w-full h-auto max-w-[100px] sm:max-w-[80px] md:max-w-[70px] lg:max-w-[60px]" // Desktop and mobile ke liye different sizes
+    className="
+      w-full h-auto
+      max-w-[50px]  // Default size for smaller screens (e.g., mobile)
+      sm:max-w-[70px] // For small screens (e.g., small mobile)
+      md:max-w-[90px] // For medium screens (e.g., tablets)
+      lg:max-w-[90px] // For large screens (e.g., laptops)
+      xl:max-w-[90px] // For extra-large screens (e.g., desktop)
+    "
   />
 </h1>
+
 
 
 

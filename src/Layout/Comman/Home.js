@@ -37,19 +37,21 @@ const Home = () => {
     return (
         <>
             {/* Slider Section */}
-            <div className="relative overflow-hidden w-full">
-                <Slider {...settings} className="w-full h-full">
-                    <div className="relative w-full h-full">
-                        <img className="w-full h-auto max-w-full object-cover" src="/images/slider3.webp" alt="Slide 1" />
-                    </div>
-                    <div className="relative w-full h-full">
-                        <img className="w-full h-auto max-w-full object-cover" src="/images/about.webp" alt="Slide 2" />
-                    </div>
-                    <div className="relative w-full h-full">
-                        <img className="w-full h-auto max-w-full object-cover" src="/images/slider6.jpg" alt="Slide 3" />
-                    </div>
-                </Slider>
-            </div>
+          {/* Slider Section */}
+<div className="relative overflow-hidden w-full mt-4 sm:mt-6 md:mt-8 lg:mt-12"> {/* Added responsive margin-top */}
+    <Slider {...settings} className="w-full h-full">
+        <div className="relative w-full h-full">
+            <img className="w-full h-auto max-w-full object-cover" src="/images/slider3.webp" alt="Slide 1" />
+        </div>
+        <div className="relative w-full h-full">
+            <img className="w-full h-auto max-w-full object-cover" src="/images/about.webp" alt="Slide 2" />
+        </div>
+        <div className="relative w-full h-full">
+            <img className="w-full h-auto max-w-full object-cover" src="/images/slider6.jpg" alt="Slide 3" />
+        </div>
+    </Slider>
+</div>
+
 
             {/* Process of Nourishment Section */}
             <div className="w-full">
