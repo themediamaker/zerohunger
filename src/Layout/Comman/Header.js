@@ -15,6 +15,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+
+  const logo = ()=>{
+    router.push('/');
+  }
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between px-2 md:px-4 py-1 z-50 w-full">
       {/* Logo Section */}
@@ -30,6 +34,7 @@ const Header = () => {
       lg:max-w-[90px] // For large screens (e.g., laptops)
       xl:max-w-[90px] // For extra-large screens (e.g., desktop)
     "
+    onClick={logo}
   />
 </h1>
 
@@ -39,26 +44,34 @@ const Header = () => {
       {/* Desktop Navigation */}
       <nav className="hidden md:block font-semibold text-lg">
         <ul className="flex items-center space-x-4">
+        <Link href="/" legacyBehavior>
           <li className="relative group p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
-            <Link href="/" legacyBehavior>
+       
               <span>Home</span>
-            </Link>
           </li>
+          </Link>
+
+          <Link href="/about" legacyBehavior>
           <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
-            <Link href="/about" legacyBehavior>
+           
               <span>About Us</span>
-            </Link>
+     
           </li>
+          </Link>
+          <Link href="/our-mission" legacyBehavior>
           <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
-            <Link href="/our-mission" legacyBehavior>
+
               <span>Our Mission</span>
-            </Link>
+  
           </li>
+          </Link>
+          <Link href="/contact" legacyBehavior>
           <li className="p-2 md:p-4 border-b-2 border-[#0c4c8a] border-opacity-0 hover:border-opacity-100 hover:text-[#0c4c8a] duration-200 cursor-pointer">
-            <Link href="/contact" legacyBehavior>
+   
               <span>Contact</span>
-            </Link>
+
           </li>
+          </Link>
         </ul>
       </nav>
 
@@ -66,26 +79,34 @@ const Header = () => {
       {isOpen && (
         <nav className="absolute top-14 left-0 w-full bg-white shadow-lg md:hidden">
           <ul className="flex flex-col items-center space-y-4 py-4">
+          <Link href="/" onClick={toggleMenu}>
             <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
-              <Link href="/" onClick={toggleMenu}>
+            
                 Home
-              </Link>
+        
             </li>
+            </Link>
+            <Link href="/about" onClick={toggleMenu}>
             <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
-              <Link href="/about" onClick={toggleMenu}>
+          
                 About Us
-              </Link>
+
             </li>
+            </Link>
+            <Link href="/our-mission" onClick={toggleMenu}>
             <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
-              <Link href="/our-mission" onClick={toggleMenu}>
+
                 Our Mission
-              </Link>
+      
             </li>
+            </Link>
+            <Link href="/contact" onClick={toggleMenu}>
             <li className="p-2 border-b-2 border-[#0c4c8a] hover:text-[#0c4c8a] duration-200 cursor-pointer">
-              <Link href="/contact" onClick={toggleMenu}>
+          
                 Contact
-              </Link>
+
             </li>
+            </Link>
           </ul>
         </nav>
       )}
